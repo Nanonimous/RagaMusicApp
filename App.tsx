@@ -1,26 +1,42 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import KeyboardScreen from './src/screen/KeyboardScreen';
+import {SearchScreen} from './src/screen/SearchScreen';
+import AllShowScreen from './src/screen/AllShowScreen';
+import DetailScreen from './src/screen/DetailScreen';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { RootStackParamList, BottomTabParamList } from './src/types/navigation';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+const Tab = createBottomTabNavigator<BottomTabParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
+function BottomTabs() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-    </SafeAreaProvider>
+    <Tab.Navigator>
+      <Tab.Screen name="Keyboard" component={KeyboardScreen} />
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="AllShows" component={AllShowScreen} />
+    </Tab.Navigator>
   );
 }
 
+export default function App() {
+  return (
+  <GestureHandlerRootView>
 
-export default App;
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="HomeTabs"
+          component={BottomTabs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Detail" component={DetailScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    </GestureHandlerRootView>
+  );
+}
