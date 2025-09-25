@@ -14,6 +14,7 @@ export type BottomTabParamList = {
 export interface Item {
   id: number;
   name: string;
-  seq : string[];
+  arohanam : string[];
+  avarohanam : string[];
   cat : string
 }

@@ -1,47 +1,140 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-
+import React, { useState, useMemo } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  TouchableHighlight,
+  Pressable,
+} from 'react-native';
+import { dataSet } from "../data/RagamList";
+import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../types/navigation';
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
 
 interface BlackKey {
   label: string;
-  top: number; // percentage of container height from the top
+  top: number;
 }
 
 export default function KeyboardScreen() {
-  // White key labels
+  const [keyPressed, setKeyPressed] = useState<string[]>([]);
+    const navigation =
+      useNavigation<NativeStackNavigationProp<RootStackParamList, "Detail">>();
   const whiteKeys = ['S', 'G1', 'GAP', 'M1', 'P', 'GAP', 'GAP', 'S'];
-
-  // Black keys with their vertical position (roughly matching your reference image)
   const blackKeys: BlackKey[] = [
-    { label: 'R1', top: 0.12 }, // between S and G1
-    { label: 'D1', top: 0.47 }, // between M1 and P
-    { label: 'N2', top: 0.60 }, // between P and next GAP
+    { label: 'gap', top: 0.05 },
+    { label: 'R1', top: 0.157 },
+    { label: 'gap', top: 0.365 },
+    { label: 'D1', top: 0.47 },
+    { label: 'N2', top: 0.575 },
   ];
+
+  const keyClicked = (key: string) => {
+    if (key.toUpperCase() !== 'GAP') {
+      setKeyPressed(keys => [...keys, key.toUpperCase()]);
+    }
+  };
+
+  const clearKeys = () => setKeyPressed([]);
+
+  const displayedKeys = keyPressed.slice(-10);
+
+  const matchingRagams = useMemo(() => {
+    if (displayedKeys.length === 0) return [];
+    return dataSet.filter(ragam =>
+      displayedKeys.every(
+        (k, idx) =>
+          ragam.arohanam?.[idx]?.toUpperCase() === k ||
+          ragam.avarohanam?.[idx]?.toUpperCase() === k
+      )
+    );
+  }, [displayedKeys]);
 
   return (
     <View style={styles.container}>
-      {/* WHITE KEYS */}
-      <View style={styles.whiteKeysWrapper}>
-        {whiteKeys.map((label, idx) => (
-          <View key={idx} style={styles.whiteKey}>
-            <Text style={styles.whiteText}>{label}</Text>
-          </View>
+      {/* 🎹 Keyboard Section */}
+      <View style={styles.keyboardContainer}>
+        <View style={styles.whiteKeysWrapper}>
+          {whiteKeys.map((label, idx) => (
+            <TouchableOpacity
+              key={idx}
+              style={styles.whiteKey}
+              onPress={() => keyClicked(label)}
+            >
+              <Text style={styles.whiteText}>{label}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {blackKeys.map((b, idx) => (
+          <TouchableOpacity
+            key={idx}
+            onPress={() => keyClicked(b.label)}
+            style={[styles.blackKey, { top: screenHeight * b.top }]}
+          >
+            <Text style={styles.blackText}>{b.label}</Text>
+          </TouchableOpacity>
         ))}
       </View>
 
-      {/* BLACK KEYS */}
-      {blackKeys.map((b, idx) => (
-        <TouchableOpacity
-          key={idx}
-          style={[
-            styles.blackKey,
-            { top: screenHeight * b.top }, // convert percentage to absolute px
-          ]}
-        >
-          <Text style={styles.blackText}>{b.label}</Text>
-        </TouchableOpacity>
-      ))}
+      {/* 👉 Sidebar */}
+      <View style={styles.sidePanel}>
+        <View style={[styles.sidebarCard, { transform: [{ rotate: "90deg" }] }]}>
+
+          {/* Key Search Section */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>🎶 Key Search</Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={styles.keyScroll}
+            >
+              <Text style={styles.keySearchText}>
+                {displayedKeys.length > 0
+                  ? displayedKeys.join(' , ')
+                  : 'No key pressed'}
+              </Text>
+            </ScrollView>
+            {displayedKeys.length > 0 && (
+              <TouchableOpacity style={styles.clearButton} onPress={clearKeys}>
+                <Text style={styles.clearButtonText}>Clear</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+
+          {/* Divider */}
+          <View style={styles.divider} />
+
+          {/* Matches Section */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>🔍 Matches</Text>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={true}
+              style={styles.matchesScroll}
+            >
+              {matchingRagams.length > 0 ? (
+                matchingRagams.map(r => (
+                  <Pressable onPress={()=> navigation.navigate("Detail", { itemId: r.id })}>
+                    <View key={r.id} style={styles.matchCard}>
+                      <Text style={styles.matchName}>{r.name}</Text>
+                      <Text style={styles.matchCat}>{r.cat}</Text>
+                    </View>
+                  </Pressable>
+
+                ))
+              ) : (
+                <Text style={styles.noMatchText}>No matches yet</Text>
+              )}
+            </ScrollView>
+          </View>
+
+        </View>
+      </View>
     </View>
   );
 }
@@ -49,15 +142,98 @@ export default function KeyboardScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000', // background frame
+    flexDirection: 'row',
+    padding: 5,
+    backgroundColor: '#fafafa'
+  },
+  keyboardContainer: {
+    flex: 2,
+    position: 'relative',
+    marginRight: 10
+  },
+  /** Sidebar Layout **/
+  sidePanel: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  whiteKeysWrapper: {
-    flexDirection: 'column',
-    width: screenWidth * 0.9,
-    height: '100%',
+  sidebarCard: {
+    width: 700,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 6,
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
+
+  /** Sections **/
+  section: {
+    marginBottom: 20,
+    maxWidth: 350,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#333',
+    marginBottom: 10,
+  },
+
+  /** Keys **/
+  keyScroll: { maxHeight: 40 },
+  keySearchText: {
+    fontSize: 16,
+    color: '#444',
+    fontWeight: '500',
+  },
+  clearButton: {
+    marginTop: 10,
+    backgroundColor: '#e74c3c',
+    paddingHorizontal: 18,
+    paddingVertical: 8,
+    borderRadius: 8,
+    alignSelf: 'flex-start',
+  },
+  clearButtonText: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 15,
+  },
+
+  /** Divider **/
+  divider: {
+    width: 1,
+    backgroundColor: '#e0e0e0',
+    marginHorizontal: 20,
+  },
+
+  /** Matches **/
+  matchesScroll: {
+    maxHeight: 160,
+  },
+  matchCard: {
+    width: 130,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 12,
+    marginRight: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    height : 60
+  },
+  matchName: { fontSize: 16, fontWeight: '700', color: '#2c3e50', textAlign: 'center' },
+  matchCat: { fontSize: 14, color: '#7f8c8d', marginTop: 4, textAlign: 'center' },
+  noMatchText: { fontSize: 15, color: '#999', marginTop: 10 },
+
+  /** Keyboard Keys **/
+  whiteKeysWrapper: { flexDirection: 'column', width: '100%', height: '100%' },
   whiteKey: {
     flex: 1,
     backgroundColor: '#fff',
@@ -66,22 +242,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: 12,
   },
-  whiteText: {
-    color: '#000',
-    fontWeight: '600',
-  },
+  whiteText: { color: '#000', fontWeight: '600' },
   blackKey: {
     position: 'absolute',
-    right: screenWidth * 0.05,      // align to right edge of white keys
-    width: screenWidth * 0.4,       // narrower than white keys
-    height: screenHeight * 0.10,    // size of each black key
+    right: 0,
+    width: screenWidth * 0.4,
+    height: screenHeight * 0.1,
     backgroundColor: '#000',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
   },
-  blackText: {
-    color: '#fff',
-    fontWeight: '600',
-  },
+  blackText: { color: '#fff', fontWeight: '600' },
 });
