@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo ,useRef,useEffect} from 'react';
+import Sound from 'react-native-sound';          
 import {
   View,
   Text,
@@ -24,20 +25,49 @@ export default function KeyboardScreen() {
   const [keyPressed, setKeyPressed] = useState<string[]>([]);
     const navigation =
       useNavigation<NativeStackNavigationProp<RootStackParamList, "Detail">>();
-  const whiteKeys = ['S', 'G1', 'GAP', 'M1', 'P', 'GAP', 'GAP', 'S'];
+  const whiteKeys = ['S', 'R2', 'G3', 'M1', 'P', 'D2', 'N3', 'S'];
   const blackKeys: BlackKey[] = [
-    { label: 'gap', top: 0.05 },
-    { label: 'R1', top: 0.157 },
-    { label: 'gap', top: 0.365 },
+    { label: 'R1', top: 0.05 },
+    { label: 'G2', top: 0.157 },
+    { label: 'M2', top: 0.365 },
     { label: 'D1', top: 0.47 },
     { label: 'N2', top: 0.575 },
   ];
+  const soundMap: Record<string, string> = {
+  S: "s",
+  R2: "r2",
+  G3: "g3",
+  M1: "m1",
+  P: "p",
+  D2: "d2",
+  N3: "n3",
+  R1: "r1",
+  G2: "g2",
+  M2: "m2",
+  D1: "d1",
+  N2: "n2",
+};
 
-  const keyClicked = (key: string) => {
-    if (key.toUpperCase() !== 'GAP') {
-      setKeyPressed(keys => [...keys, key.toUpperCase()]);
-    }
+const soundsRef = useRef<Record<string, Sound>>({});
+
+useEffect(() => {
+  Object.keys(soundMap).forEach(key => {
+    soundsRef.current[key] = new Sound(soundMap[key], undefined, (err) => {
+      if (err) console.log('Failed to load', key, err);
+    });
+  });
+
+  return () => {
+    Object.values(soundsRef.current).forEach(s => s.release());
   };
+}, []);
+
+const keyClicked = (key: string) => {
+  const sound = soundsRef.current[key.toUpperCase()];
+  if (sound) sound.stop(() => sound.play());
+  setKeyPressed(keys => [...keys, key.toUpperCase()]);
+};
+
 
   const clearKeys = () => setKeyPressed([]);
 

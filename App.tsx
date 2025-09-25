@@ -8,6 +8,7 @@ import KeyboardScreen from './src/screen/KeyboardScreen';
 import {SearchScreen} from './src/screen/SearchScreen';
 import AllShowScreen from './src/screen/AllShowScreen';
 import DetailScreen from './src/screen/DetailScreen';
+import SplashScreen from './src/screen/SplashScreen';
 
 import { RootStackParamList, BottomTabParamList } from './src/types/navigation';
 
@@ -48,6 +49,11 @@ export default function App() {
   <GestureHandlerRootView>
     <NavigationContainer>
       <Stack.Navigator>
+          <Stack.Screen
+            name="Splash"
+            component={SplashScreen}
+            options={{ headerShown: false }}
+          />
         <Stack.Screen
           name="HomeTabs"
           component={BottomTabs}

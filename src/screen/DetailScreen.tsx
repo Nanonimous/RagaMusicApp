@@ -1,15 +1,17 @@
 // src/screens/DetailScreen.tsx
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { RootStackParamList } from "../types/navigation";
 import { dataSet } from "../data/RagamList";
+import Sound from "react-native-sound";
 
 type DetailScreenRouteProp = RouteProp<RootStackParamList, "Detail">;
 
 export default function DetailScreen() {
   const route = useRoute<DetailScreenRouteProp>();
   const { itemId } = route.params;
+  const soundsRef = useRef<Record<string, Sound>>({});
 
   const ragam = dataSet.find((r) => r.id === itemId);
 
@@ -21,23 +23,83 @@ export default function DetailScreen() {
     );
   }
 
+  // Correct require paths
+   const soundMap: Record<string, string> = {
+  S: "s",
+  G1: "r2",
+  G3: "g3",
+  M1: "m1",
+  P: "p",
+  N1: "d2",
+  N3: "n3",
+  R1: "r1",
+  G2: "g2",
+  M2: "m2",
+  D1: "d1",
+  N2: "n2",
+};
+
+useEffect(() => {
+  Object.keys(soundMap).forEach(key => {
+    soundsRef.current[key] = new Sound(soundMap[key], Sound.MAIN_BUNDLE, (err) => {
+      if (err) console.log("Failed to load", key, err);
+    });
+  });
+
+  return () => {
+    Object.values(soundsRef.current).forEach(s => s.release());
+  };
+}, []);
+
+const playSequence = (keys: string[]) => {
+  let index = 0;
+  console.log(keys)
+  const playNext = () => {
+    if (index >= keys.length) return;
+
+    const key = keys[index].toUpperCase();
+    const sound = soundsRef.current[key];
+    console.log(sound)
+    if (sound) {
+      sound.stop(() => {
+        sound.play(() => {
+          index++;
+          playNext();
+        });
+      });
+    } else {
+      index++;
+      playNext();
+    }
+  };
+
+  playNext();
+};
+
+
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{ragam.name}</Text>
       <Text style={styles.cat}>{ragam.cat}</Text>
 
       <View style={styles.section}>
-        <Text style={styles.heading}>Arohanam </Text>
+        <Text style={styles.heading}>Arohanam</Text>
         <Text style={styles.sequence}>{ragam.arohanam.join(" - ")}</Text>
-        <Pressable style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => playSequence(ragam.arohanam)}
+        >
           <Text style={styles.buttonText}>▶ Play Arohanam</Text>
         </Pressable>
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.heading}>Avarohanam </Text>
-        <Text style={styles.sequence}>{ragam.avarohanam.slice().reverse().join(" - ")}</Text>
-        <Pressable style={[styles.button, { backgroundColor: "#009688" }]}>
+        <Text style={styles.heading}>Avarohanam</Text>
+        <Text style={styles.sequence}>{ragam.avarohanam.join(" - ")}</Text>
+        <Pressable
+          style={[styles.button, { backgroundColor: "#009688" }]}
+          onPress={() => playSequence(ragam.avarohanam)}
+        >
           <Text style={styles.buttonText}>▶ Play Avarohanam</Text>
         </Pressable>
       </View>

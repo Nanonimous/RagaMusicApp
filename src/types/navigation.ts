@@ -1,4 +1,5 @@
 export type RootStackParamList = {
+  Splash:undefined;
   HomeTabs: undefined;
    Detail: {itemId : number | null};
     //Detail: undefined;

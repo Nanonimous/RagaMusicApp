@@ -13,11 +13,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -38,11 +38,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -63,11 +63,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -88,11 +88,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -113,11 +113,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -138,11 +138,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "1 Indu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -163,11 +163,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -188,11 +188,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -213,11 +213,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -238,11 +238,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -263,11 +263,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -288,11 +288,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "2 Netra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -313,11 +313,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -338,11 +338,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -363,11 +363,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -388,11 +388,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -413,11 +413,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -438,11 +438,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "3 Agni Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -463,11 +463,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -488,11 +488,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -513,11 +513,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -538,11 +538,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -563,11 +563,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -588,11 +588,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "4 Veda Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -613,11 +613,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -638,11 +638,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -663,11 +663,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -688,11 +688,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -713,11 +713,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -738,11 +738,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "5 Bana Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -763,11 +763,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -788,11 +788,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -813,11 +813,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -838,11 +838,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -863,11 +863,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -888,11 +888,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "6 Rutu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -913,11 +913,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -938,11 +938,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -963,11 +963,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -988,11 +988,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1013,11 +1013,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1038,11 +1038,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "7 Rishi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -1063,11 +1063,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -1088,11 +1088,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -1113,11 +1113,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -1138,11 +1138,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1163,11 +1163,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1188,11 +1188,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "8 Vasu Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -1213,11 +1213,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -1238,11 +1238,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -1263,11 +1263,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -1288,11 +1288,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1313,11 +1313,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1338,11 +1338,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "9 Brahma Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -1363,11 +1363,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -1388,11 +1388,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -1413,11 +1413,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -1438,11 +1438,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1463,11 +1463,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1488,11 +1488,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "10 Disi Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -1513,11 +1513,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -1538,11 +1538,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -1563,11 +1563,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -1588,11 +1588,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1613,11 +1613,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1638,11 +1638,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "11 Rudra Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
@@ -1663,11 +1663,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n1",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n1",
             "d1",
             "p",
@@ -1688,11 +1688,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d1",
             "p",
@@ -1713,11 +1713,11 @@ export const dataSet :Item[] = [
             "p",
             "d1",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d1",
             "p",
@@ -1738,11 +1738,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n2",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n2",
             "d2",
             "p",
@@ -1763,11 +1763,11 @@ export const dataSet :Item[] = [
             "p",
             "d2",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d2",
             "p",
@@ -1788,11 +1788,11 @@ export const dataSet :Item[] = [
             "p",
             "d3",
             "n3",
-            "s'"
+            "s"
         ],
         cat: "12 Aditya Cakra",
         avarohanam: [
-            "s'",
+            "s",
             "n3",
             "d3",
             "p",
